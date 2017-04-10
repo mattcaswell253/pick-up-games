@@ -18,4 +18,8 @@ export class GameService {
    return this.angularFire.database.object('games/' + chosenGameId);
  }
 
+ addGame(newGame: Game){
+   this.games.push(newGame);
+ }
+
 }
