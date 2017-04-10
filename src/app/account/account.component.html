@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <h1>My Account</h1>
+</div>
+
+<div *ngIf="(user$ | async)" class="row text-center">
+ <h2>
+   Welcome, {{ ( user$ | async ).fullName }}.
+ </h2>
+
+ <ul class="nav nav-pills nav-stacked text-centered">
+   <li role="presentation" (click)="logout()"><a href="#">Logout</a></li>
+ </ul>
+</div>

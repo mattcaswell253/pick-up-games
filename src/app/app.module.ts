@@ -8,6 +8,7 @@ import { routing } from './app.routing';
 import { GamesComponent } from './games/games.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
+import { AccountComponent } from './account/account.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { AddGameComponent } from './add-game/add-game.component';
 
@@ -22,6 +23,7 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     HomePageComponent,
+    AccountComponent,
     GamesComponent,
     GameDetailComponent,
     AddGameComponent
