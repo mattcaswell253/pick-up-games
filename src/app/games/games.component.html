@@ -1,0 +1,9 @@
+<div *ngFor="let game of games | async" (click)="goToDetailPage(game)" class="panel panel-default">
+  <div class="panel-body">
+    {{game.sport}}
+    {{game.location}}
+    {{game.players}}
+    {{game.date}}
+    {{game.time}}
+  </div>
+</div>
