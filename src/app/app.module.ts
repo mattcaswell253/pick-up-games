@@ -5,9 +5,11 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { routing } from './app.routing';
+import { GamesComponent } from './games/games.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AccountComponent } from './account/account.component';
+import { GameDetailComponent } from './game-detail/game-detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -16,12 +18,13 @@ export const firebaseConfig = {
   storageBucket: masterFirebaseConfig.storageBucket
 };
 
-
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    AccountComponent
+    AccountComponent,
+    GamesComponent,
+    GameDetailComponent
   ],
   imports: [
     BrowserModule,

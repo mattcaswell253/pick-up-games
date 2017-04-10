@@ -5,4 +5,4 @@ export var masterFirebaseConfig = {
   projectId: "pickup-game-754fd",
   storageBucket: "pickup-game-754fd.appspot.com",
   messagingSenderId: "130415141763"
-  };
+};
