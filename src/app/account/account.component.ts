@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
-import { AuthPortComponent } from 'angular-stormpath';
+import { Component, OnInit  } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { Account } from '../account.model';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  styleUrls: ['./account.component.css'],
+  providers: [AccountService]
 })
 
-export class AccountComponent extends AuthPortComponent {
+export class AccountComponent implements OnInit {
+  account:FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
+  constructor(private router: Router, private accountService: AccountService) { }
+
+  ngOnInit() {
+    this.account = this.accountService.getAccounts();
+  }
+
+  submitForm(name: string, username: string, email: string) {
+    var newAccount: Account = new Account(name, username, email);
+    this.accountService.addAccount(newAccount);
+  }
 }

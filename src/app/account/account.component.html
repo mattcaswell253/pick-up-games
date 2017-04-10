@@ -2,12 +2,18 @@
   <h1>My Account</h1>
 </div>
 
-<div *ngIf="(user$ | async)" class="row text-center">
- <h2>
-   Welcome, {{ ( user$ | async ).fullName }}.
- </h2>
+<form class="new-user">
+  <div>
+    <input #newName placeholder="Name">
+    <input #newUserName placeholder="Username">
+    <input type="email" #userEmail placeholder="email">
+  </div>
+  <button class="btn btn-success" (click)="submitForm(newName.value, newUserName.value, userEmail.value); newName.value=''; newUserName.value=''; userEmail.value=''">Create Account</button>
+</form>
 
- <ul class="nav nav-pills nav-stacked text-centered">
-   <li role="presentation" (click)="logout()"><a href="#">Logout</a></li>
- </ul>
+<h1>Accounts</h1>
+<div *ngFor="let account of accounts | async" class="panel panel-default">
+  <div class="panel-body">
+    {{account.username}}
+  </div>
 </div>
