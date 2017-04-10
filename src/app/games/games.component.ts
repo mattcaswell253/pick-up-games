@@ -22,8 +22,8 @@ export class GamesComponent implements OnInit {
     this.games = this.gameService.getGames();
   }
 
-  goToDetailPage(clickedGame: Game) {
-  //  this.router.navigate(['games', clickedGame.$key]);
+  goToDetailPage(clickedGame) {
+   this.router.navigate(['games', clickedGame.$key]);
  };
 
 }

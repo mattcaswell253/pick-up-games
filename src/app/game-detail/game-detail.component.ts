@@ -20,7 +20,7 @@ export class GameDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
           this.gameId = urlParameters['id'];
-        });
+        }); //finds and assigns id to gameId
          this.gameService.getGameById(this.gameId).subscribe(dataLastEmittedFromObserver => {
          this.gameToDisplay = new Game
          (dataLastEmittedFromObserver.sport,
