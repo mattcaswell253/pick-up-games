@@ -1,4 +1,4 @@
-{ "players": [{
+{ "games": [{
     "sport": "Basketball",
     "players": 10,
     "location": "outside",

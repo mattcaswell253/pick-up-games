@@ -12,7 +12,6 @@ import { GameService } from '../game.service';
   providers: [GameService]
 })
 export class GamesComponent implements OnInit {
-
   games:FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
@@ -22,8 +21,8 @@ export class GamesComponent implements OnInit {
     this.games = this.gameService.getGames();
   }
 
-  goToDetailPage(clickedGame: Game) {
-  //  this.router.navigate(['games', clickedGame.$key]);
+  goToDetailPage(clickedGame) {
+   this.router.navigate(['games', clickedGame.$key]);
  };
 
 }
