@@ -23,7 +23,7 @@ export class GamesComponent implements OnInit {
   }
 
   goToDetailPage(clickedGame: Game) {
-   this.router.navigate(['games', clickedGame.$key]);
+  //  this.router.navigate(['games', clickedGame.$key]);
  };
 
 }
