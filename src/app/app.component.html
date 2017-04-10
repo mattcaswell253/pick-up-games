@@ -9,6 +9,16 @@
   </div>
 </nav>
 
+<h1>{{title}}</h1>
+
+<button class= "btn btn-success" (click)="performSearch()">Search</button>
+
+<div *ngFor="let c of courts">
+  <li>{{c.address}}, {{c.common_name}}</li>
+
+
+</div>
+
 <div class="container">
 
   <router-outlet></router-outlet>

@@ -3,7 +3,7 @@
   "description": "",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/mattcaswell253/Pick-up-games",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -13,5 +13,8 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7"
-  }
+  },
+  "authors": [
+    "mattcaswell <matthewcaswell253@Gmail.com>"
+  ]
 }
