@@ -2,23 +2,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import {} from 'jasmine';
 
-import { HomePageComponent } from './home-page.component';
+import { GameDetailComponent } from './game-detail.component';
 
-describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+describe('GameDetailComponent', () => {
+  let component: GameDetailComponent;
+  let fixture: ComponentFixture<GameDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePageComponent ]
+      declarations: [ GameDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(GameDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
