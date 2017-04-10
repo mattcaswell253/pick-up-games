@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1>My Account</h1>
+</div>
+
+<form class="new-user">
+  <div>
+    <input #newName placeholder="Name">
+    <input #newUserName placeholder="Username">
+    <input type="email" #userEmail placeholder="email">
+  </div>
+  <button class="btn btn-success" (click)="submitForm(newName.value, newUserName.value, userEmail.value); newName.value=''; newUserName.value=''; userEmail.value=''">Create Account</button>
+</form>
+
+<h1>Accounts</h1>
+<div *ngFor="let account of accounts | async" class="panel panel-default">
+  <div class="panel-body">
+    {{account.username}}
+  </div>
+</div>

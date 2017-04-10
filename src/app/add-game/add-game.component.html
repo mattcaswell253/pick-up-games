@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Start a new pick up game!</h2>
+  </div>
+  <div class="panel-body">
+    <div class="">
+      <div class="">
+        <input #newSport type="text" placeholder="Sport">
+      </div>
+      <div class="">
+        <input #newPlayers type="number" placeholder="Players">
+      </div>
+      <div class="">
+        <input #newLocation type="text" placeholder="Location">
+      </div>
+      <div class="">
+        <input #newDate type="text" placeholder="Date">
+      </div>
+      <div class="">
+        <input #newTime type="text" placeholder="Time">
+      </div>
+      <button (click)="submitForm(newSport.value, newPlayers.value, newLocation.value, newDate.value, newTime.value); newSport.value=''; newPlayers.value=''; newLocation.value=''; newDate.value=''; newTime.value='';" routerLink="/">Add</button>
+    </div>
+  </div>
+</div>
