@@ -19,8 +19,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../bower_components/bootstrap/dist/css/bootstrap.css",
-        "../bower_components/jquery/dist/jquery.js"
+        "../bower_components/bootstrap/dist/css/bootstrap.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
