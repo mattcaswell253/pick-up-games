@@ -50,25 +50,28 @@ export class MapComponent implements OnInit {
 
   performSearch(): void {
     var apiLink = this.link;
+    let currentMarkers:marker[];
 
   this.http.request(apiLink)
     .subscribe((res: Response) => {
       this.courts = res.json();
-      for(var i = 0; i <= this.courts.length; i++) {
+      for(var i = 0; i < this.courts.length; i++) {
         var newMarker = {
-          label: this.courts[i].common_name,
           lat: this.courts[i].latitude,
+          label: this.courts[i].common_name,
           lng: this.courts[i].longitude,
           draggable: false
         }
         console.log(newMarker);
+        this.markers.push(newMarker);
       }
-      this.markers.push(newMarker);
     });
+    console.log(this.markers);
   }
 
 
   ngOnInit() {
+    this.performSearch();
   }
 }
 
