@@ -14,21 +14,33 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 export class GameDetailComponent implements OnInit {
   gameId: string;
   gameToDisplay: Game;
+  game:FirebaseObjectObservable<any[]>;
 
   constructor(private route: ActivatedRoute, private location: Location, private gameService: GameService, private router: Router) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
           this.gameId = urlParameters['id'];
-        }); //finds and assigns id to gameId
+        });
          this.gameService.getGameById(this.gameId).subscribe(dataLastEmittedFromObserver => {
          this.gameToDisplay = new Game
-         (dataLastEmittedFromObserver.sport,
-         dataLastEmittedFromObserver.players,
-         dataLastEmittedFromObserver.location,
+         (dataLastEmittedFromObserver.names,
+         dataLastEmittedFromObserver.numberPlayers,
          dataLastEmittedFromObserver.date,
          dataLastEmittedFromObserver.time)
+        //  console.log(this.gameToDisplay);
+
        })
   }
 
+  addPlayer(name: string) {
+    this.gameService.getGameById(this.gameId).subscribe(dataLastEmittedFromObserver => {
+    this.gameToDisplay = new Game
+    (dataLastEmittedFromObserver.names,
+    dataLastEmittedFromObserver.numberPlayers,
+    dataLastEmittedFromObserver.date,
+    dataLastEmittedFromObserver.time)
+    dataLastEmittedFromObserver.names.push(name);
+  })
+}
 }

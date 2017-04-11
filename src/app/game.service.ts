@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Game } from './game.model';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 @Injectable()
 export class GameService {
@@ -17,6 +17,10 @@ export class GameService {
   getGameById(chosenGameId: string){
    return this.angularFire.database.object('games/' + chosenGameId);
  }
+
+ // adjustGame(game:FirebaseObjectObservable<any[]>, newName: string){
+ //   game.names.push(newName);
+ // }
 
  addGame(newGame: Game){
    this.games.push(newGame);
