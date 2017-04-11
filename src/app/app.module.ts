@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 import { HomePageComponent } from './home-page/home-page.component';
 import { routing } from './app.routing';
 import { GamesComponent } from './games/games.component';
@@ -12,6 +14,7 @@ import { AccountComponent } from './account/account.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddGameComponent } from './add-game/add-game.component';
+import { MapComponent } from './map/map.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -29,16 +32,21 @@ export const firebaseConfig = {
     GamesComponent,
     GameDetailComponent,
     ProfileComponent,
-    AddGameComponent
+    AddGameComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD_yi8XR-EogyolwReGVfkZdXHzO4ESvGw'
+    })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
