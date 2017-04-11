@@ -8,7 +8,8 @@
     <input #newUserName placeholder="Username">
     <input type="email" #userEmail placeholder="email">
   </div>
-  <button class="btn btn-success" (click)="submitForm(newName.value, newUserName.value, userEmail.value); newName.value=''; newUserName.value=''; userEmail.value=''">Create Account</button>
+  <button class="btn btn-success new-acct" (click)="submitForm(newName.value, newUserName.value, userEmail.value); newName.value=''; newUserName.value=''; userEmail.value=''">Create Account</button>
+  <button class="btn btn-primary acct-login">Account Login</button>
 </form>
 
 <h1>Accounts</h1>
