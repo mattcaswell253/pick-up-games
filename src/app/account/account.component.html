@@ -2,14 +2,21 @@
   <h1>My Account</h1>
 </div>
 
-<form class="new-user">
+<button class="btn btn-warning">Create Account</button>
+<form class="new-acct-form">
   <div>
     <input #newName placeholder="Name">
     <input #newUserName placeholder="Username">
-    <input type="email" #userEmail placeholder="email">
+    <input #userEmail type="email" placeholder="Email">
+    <input #userPassword type="password" placeholder="Password">
   </div>
-  <button class="btn btn-success new-acct" (click)="submitForm(newName.value, newUserName.value, userEmail.value); newName.value=''; newUserName.value=''; userEmail.value=''">Create Account</button>
-  <button class="btn btn-primary acct-login">Account Login</button>
+  <button class="btn btn-success new-acct" (click)="submitForm(newName.value, newUserName.value, userEmail.value, userPassword.value); newName.value=''; newUserName.value=''; userEmail.value=''; userPassword.value=''">Submit</button>
+</form>
+
+<button class="btn btn-primary acct-login">Account Login</button>
+<form class="">
+  <input placeholder="Username">
+  <input type="password" placeholder="Password">
 </form>
 
 <h1>Accounts</h1>

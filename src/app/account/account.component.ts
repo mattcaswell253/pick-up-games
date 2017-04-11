@@ -21,8 +21,8 @@ export class AccountComponent implements OnInit {
     this.account = this.accountService.getAccounts();
   }
 
-  submitForm(name: string, username: string, email: string) {
-    var newAccount: Account = new Account(name, username, email);
+  submitForm(name: string, username: string, email: string, password: string) {
+    var newAccount: Account = new Account(name, username, email, password);
     this.accountService.addAccount(newAccount);
   }
 }
