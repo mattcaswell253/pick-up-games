@@ -10,6 +10,7 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AccountComponent } from './account/account.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AddGameComponent } from './add-game/add-game.component';
 
 export const firebaseConfig = {
@@ -27,6 +28,7 @@ export const firebaseConfig = {
     AccountComponent,
     GamesComponent,
     GameDetailComponent,
+    ProfileComponent,
     AddGameComponent
   ],
   imports: [

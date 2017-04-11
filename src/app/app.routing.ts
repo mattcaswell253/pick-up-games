@@ -5,6 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AccountComponent } from './account/account.component';
 import { GamesComponent } from './games/games.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   {
@@ -22,6 +23,10 @@ const appRoutes: Routes = [
   {
     path: 'games/:id',
     component: GameDetailComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
 ];
 

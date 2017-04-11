@@ -1,0 +1,10 @@
+<h1>Games</h1>
+<div *ngFor="let game of games | async" class="panel panel-default">
+  <div class="panel-body">
+    {{game.sport}}
+    {{game.location}}
+    {{game.players}}
+    {{game.date}}
+    {{game.time}}
+  </div>
+</div>
