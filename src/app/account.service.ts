@@ -7,7 +7,7 @@ export class AccountService {
   account: FirebaseListObservable<any[]>;
 
   constructor(private angularFire: AngularFire) {
-    this.account = angularFire.database.list('account')
+    this.account = angularFire.database.list('account');
   }
 
   getAccounts() {
