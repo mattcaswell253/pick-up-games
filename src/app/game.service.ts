@@ -18,9 +18,10 @@ export class GameService {
    return this.angularFire.database.object('games/' + chosenGameId);
  }
 
- // adjustGame(game:FirebaseObjectObservable<any[]>, newName: string){
- //   game.names.push(newName);
- // }
+ updateGame(localUpdatedGame, nameAdded){
+    var gameEntryInFirebase = this.getGameById(localUpdatedGame.$key);
+    gameEntryInFirebase.update({names: localUpdatedGame.names+", "+nameAdded});
+}
 
  addGame(newGame: Game){
    this.games.push(newGame);

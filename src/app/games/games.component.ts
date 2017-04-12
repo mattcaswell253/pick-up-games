@@ -13,8 +13,7 @@ import { GameService } from '../game.service';
 export class GamesComponent implements OnInit {
   games:FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
-  arrayToPush: Array<string> = [];
-
+  
   constructor(private router: Router, private gameService: GameService) { }
 
   ngOnInit() {
@@ -25,12 +24,8 @@ export class GamesComponent implements OnInit {
    this.router.navigate(['games', clickedGame.$key]);
  }
 
- arrayPush(name: string){
-   this.arrayToPush.push(name);
- }
- submitForm(name: string, players: number, date: string, time: string) {
-   this.arrayPush(name);
-   var newGame: Game = new Game(this.arrayToPush, players, date, time);
+ submitForm(name: string, numberPlayers: number, date: string, time: string) {
+   var newGame: Game = new Game(name, numberPlayers, date, time);
    this.gameService.addGame(newGame);
  }
 
