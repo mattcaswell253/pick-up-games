@@ -4,22 +4,22 @@ import { Court } from './court.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Injectable()
-export class GameService {
+export class CourtService {
   games: FirebaseListObservable<any[]>;
+  courts: FirebaseListObservable<any[]>;
 
   constructor(private angularFire: AngularFire) {
     this.games = angularFire.database.list('games')
+    this.courts = angularFire.database.list('courts')
   }
 
-  getGames(){
-    return this.games;
+  getCourt(){
+    return this.courts;
   }
-
-  getGameById(chosenGameId: string){
-   return this.angularFire.database.object('games/' + chosenGameId);
+  getCourtById(chosenCourtId: string){
+   return this.angularFire.database.object('courts/' + chosenCourtId);
  }
-
- addGame(newGame: Game){
-   this.games.push(newGame);
- }
+  addCourt(newCourt: Court){
+    this.courts.push(newCourt);
+  }
 }

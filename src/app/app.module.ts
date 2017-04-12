@@ -15,6 +15,7 @@ import { GameDetailComponent } from './game-detail/game-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { MapComponent } from './map/map.component';
+import { CourtDetailsComponent } from './court-details/court-details.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -33,7 +34,8 @@ export const firebaseConfig = {
     GameDetailComponent,
     ProfileComponent,
     AddGameComponent,
-    MapComponent
+    MapComponent,
+    CourtDetailsComponent
   ],
   imports: [
     BrowserModule,
