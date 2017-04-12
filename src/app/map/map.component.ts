@@ -17,36 +17,12 @@ export class MapComponent implements OnInit {
   http: Http;
   courts = [];
   // google maps zoom level
-  zoom: number = 10;
+  zoom: number = 12;
   // initial center position for the map
-  lat: number = 47.5636;
-  lng: number = -122.358;
-  markers: marker[] = [
-   {
-     label: 'A',
-     lat: 47.6216,
-     lng: -122.30524,
-     draggable: true
-   },
-   {
-     label: 'B',
-     lat: 47.629173,
-     lng: -122.359947,
-     draggable: false
-   },
-   {
-     label: 'C',
-     lat: 47.682453,
-     lng: -122.337787,
-     draggable: true
-   }
- ]
+  lat: number = 47.601407;
+  lng: number = -122.307257;
 
-
-
-  constructor(http: Http) {
-    this.http = http;
-  }
+  markers: marker[] = []
 
   performSearch(): void {
     var apiLink = this.link;
@@ -56,28 +32,35 @@ export class MapComponent implements OnInit {
     .subscribe((res: Response) => {
       this.courts = res.json();
       for(var i = 0; i < this.courts.length; i++) {
-        var newMarker = {
-          lat: this.courts[i].latitude,
-          label: this.courts[i].common_name,
-          lng: this.courts[i].longitude,
-          draggable: false
+        if (this.courts[i].city_feature === "Basketball Courts"){
+          var newMarker = {
+            lat: parseFloat(this.courts[i].latitude),
+            lng: parseFloat(this.courts[i].longitude),
+            label: this.courts[i].common_name,
+            draggable: false
+          }
+          this.markers.push(newMarker);
         }
-        console.log(newMarker);
-        this.markers.push(newMarker);
       }
     });
     console.log(this.markers);
   }
-
-
   ngOnInit() {
     this.performSearch();
   }
+  clickedMarker(marker: marker, index: number) {
+    console.log('Clicked Marker: ' + marker.label + ' at index '+ index);
+  }
+
+  constructor(http: Http) {
+    this.http = http;
+  }
+
 }
 
 interface marker {
+  label?: string;
 	lat: number;
 	lng: number;
-	label?: string;
 	draggable: boolean;
 }
