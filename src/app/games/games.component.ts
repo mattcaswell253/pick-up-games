@@ -24,8 +24,8 @@ export class GamesComponent implements OnInit {
    this.router.navigate(['games', clickedGame.$key]);
  }
 
- submitForm(name: string, numberPlayers: number, date: string, time: string, location: string) {
-   var newGame: Game = new Game(name, numberPlayers, date, time, location);
+ submitForm(names: string, numberPlayers: number, date: string, time: string, location: string) {
+   var newGame: Game = new Game(names, numberPlayers, date, time, location);
    this.gameService.addGame(newGame);
  }
 

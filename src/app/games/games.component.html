@@ -1,5 +1,8 @@
 
 <div *ngFor="let game of games | async" (click)="goToDetailPage(game)" class="panel panel-default">
+  <div class="panel-heading game-heading">
+    <span></span>{{game.location}}
+  </div>
 
   <div class="panel-body">
     <div class="col-md-4 game-info">
@@ -17,26 +20,4 @@
 
   </div>
 </div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2 class="panel-title">Start a new pick up game!</h2>
-  </div>
-  <div class="panel-body">
-    <div class="">
-      <div class="">
-        <input #newName type="string" placeholder="Name">
-      </div>
-      <div class="">
-        <input #newPlayers type="number" placeholder="Players">
-      </div>
-      <div class="">
-        <input #newDate type="text" placeholder="Date">
-      </div>
-      <div class="">
-        <input #newTime type="text" placeholder="Time">
-      </div>
-      <button (click)="submitForm(newName.value, newPlayers.value, newDate.value, newTime.value); newName.value=''; newPlayers.value=''; newDate.value=''; newTime.value='';" routerLink="/">Add</button>
-    </div>
-  </div>
-</div>
+  <app-add-game></app-add-game>

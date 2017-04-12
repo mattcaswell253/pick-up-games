@@ -1,21 +1,21 @@
 <div>
   {{courtToDisplay?.name}}
 </div>
-
-<div *ngFor="let game of games | async" class="panel panel-default">
-  <div class="panel-heading game-heading">
-    <span (click)="goToDetailPage(game)">{{game.sport}}</span> |
-    <span>{{game.location}}</span>
-  </div>
-  <div class="panel-body">
-    <div class="col-md-4 game-info">
-      Number of players needed: {{game.players}}
+<div>
+  <div *ngFor="let game of games | async" class="panel panel-default">
+    <div class="panel-heading game-heading">
+      <span (click)="goToDetailPage(game)">{{game.location}}</span>
     </div>
-    <div class="col-md-4 game-info">
-      Date: {{game.date}}
-    </div>
-    <div class="col-md-4 game-info">
-      Time: {{game.time}}
+    <div class="panel-body">
+      <div class="col-md-4 game-info">
+        Number of players needed: {{game.players}}
+      </div>
+      <div class="col-md-4 game-info">
+        Date: {{game.date}}
+      </div>
+      <div class="col-md-4 game-info">
+        Time: {{game.time}}
+      </div>
     </div>
   </div>
 </div>

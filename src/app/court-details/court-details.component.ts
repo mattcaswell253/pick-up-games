@@ -22,7 +22,7 @@ export class CourtDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private location: Location, private gameService: GameService, private router: Router, private courtService: CourtService) { }
 
   ngOnInit() {
-    // this.games = this.gameService.getGames();
+    this.games = this.gameService.getGames();
     // this.route.params.forEach((urlParameters) => {
     //   this.courtId = urlParameters['id'];
     //     }); //finds and assigns id to gameId
