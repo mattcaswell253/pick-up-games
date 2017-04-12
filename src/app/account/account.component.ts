@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Account } from '../account.model';
@@ -11,18 +11,16 @@ import { AccountService } from '../account.service';
   providers: [AccountService]
 })
 
-export class AccountComponent implements OnInit {
+export class AccountComponent {
   account:FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
+
   constructor(private router: Router, private accountService: AccountService) { }
 
-  ngOnInit() {
-    this.account = this.accountService.getAccounts();
-  }
 
-  submitForm(name: string, username: string, email: string) {
-    var newAccount: Account = new Account(name, username, email);
+  submitForm(name: string, username: string, email: string, password: string) {
+    var newAccount: Account = new Account(name, username, email, password);
     this.accountService.addAccount(newAccount);
   }
 }

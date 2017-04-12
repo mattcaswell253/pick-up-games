@@ -13,17 +13,16 @@ import { AccountService } from '../account.service';
   providers: [GameService, AccountService]
 
 })
+
 export class ProfileComponent implements OnInit {
   games:FirebaseListObservable<any[]>;
   accounts:FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
-
-  constructor (private router: Router, private gameService: GameService, private accountService: AccountService) { }
+  constructor(private router: Router, private gameService: GameService, private accountService: AccountService) { }
 
   ngOnInit() {
       this.games = this.gameService.getGames();
       this.accounts = this.accountService.getAccounts();
   }
-
 }
