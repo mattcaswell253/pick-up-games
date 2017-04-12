@@ -17,5 +17,4 @@ export class AccountService {
   addAccount(newAccount: Account) {
     this.account.push(newAccount);
   }
-
 }

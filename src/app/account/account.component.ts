@@ -15,12 +15,10 @@ export class AccountComponent {
   account:FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
-
   constructor(private router: Router, private accountService: AccountService) { }
 
-
-  submitForm(name: string, username: string, email: string, password: string) {
-    var newAccount: Account = new Account(name, username, email, password);
+  submitForm(name: string, username: string, email: string, password: string, photo: string) {
+    var newAccount: Account = new Account(name, username, email, password, photo);
     this.accountService.addAccount(newAccount);
   }
 }
