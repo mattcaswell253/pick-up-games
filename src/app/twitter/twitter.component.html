@@ -1,1 +1,13 @@
-<a class="twitter-timeline" href="https://twitter.com/seattlepickups1"> Tweets by @TwitterDev</a>
+<div class="tweet-main">
+<a class="twitter-timeline" href="https://twitter.com/seattlepickups1" data-tweet-limit="5" data-width="800" data-height="400"> Tweets by @SeattlePickups1</a>
+</div>
+
+<div class="jumbotron hash-search">
+<label for="hashtags">Search by hashtags</label>
+<input id="hashtags" type="text" [(ngModel)]="searchquery" [ngModelOptions]="{standalone: true}">
+<button class="btn btn-primary" (click)="searchcall()">Search</button>
+<span>{{item.user.name}}</span>
+<div>
+  <p>{{item.text}}</p>
+</div>
+</div>
