@@ -4,7 +4,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Game } from '../game.model';
 import { GameService } from '../game.service';
 
-
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
@@ -23,6 +22,11 @@ export class GamesComponent implements OnInit {
 
   goToDetailPage(clickedGame) {
    this.router.navigate(['games', clickedGame.$key]);
- };
+ }
+
+ submitForm(name: string, numberPlayers: number, date: string, time: string, location: string) {
+   var newGame: Game = new Game(name, numberPlayers, date, time, location);
+   this.gameService.addGame(newGame);
+ }
 
 }

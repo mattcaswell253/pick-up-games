@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Game } from './game.model';
-import { Marker } from './marker.model';
+import { Court } from './court.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Injectable()
 export class GameService {
   games: FirebaseListObservable<any[]>;
   markers: FirebaseListObservable<any[]>;
-  arrayToPush: Array<Marker> = [];
 
   constructor(private angularFire: AngularFire) {
     this.games = angularFire.database.list('games')
@@ -20,6 +19,11 @@ export class GameService {
   getGameById(chosenGameId: string){
    return this.angularFire.database.object('games/' + chosenGameId);
  }
+
+ updateGame(localUpdatedGame, nameAdded){
+    var gameEntryInFirebase = this.getGameById(localUpdatedGame.$key);
+    gameEntryInFirebase.update({names: localUpdatedGame.names+", "+nameAdded});
+}
 
  addGame(newGame: Game){
    this.games.push(newGame);

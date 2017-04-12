@@ -8,13 +8,12 @@
 
   <sebm-google-map-marker
   *ngFor="let m of markers; let i = index"
-  (markerClick)="clickedMarker(m, i)"
   [latitude]="m.lat"
-  [longitude]="m.lng"
-  [markerDraggable]="m.draggable">
+  [longitude]="m.lng">
 
   <sebm-google-map-info-window>
-    <strong >{{m.label}}</strong>
+    <strong (click)="clickedCourt(m, i)"
+>{{m.name}}</strong>
   </sebm-google-map-info-window>
 
   </sebm-google-map-marker>

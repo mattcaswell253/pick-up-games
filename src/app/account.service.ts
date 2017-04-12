@@ -4,17 +4,17 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Injectable()
 export class AccountService {
-  account: FirebaseListObservable<any[]>;
+  accounts: FirebaseListObservable<any[]>;
 
   constructor(private angularFire: AngularFire) {
-    this.account = angularFire.database.list('account');
+    this.accounts = angularFire.database.list('account');
   }
 
   getAccounts() {
-    return this.account;
+    return this.accounts;
   }
 
   addAccount(newAccount: Account) {
-    this.account.push(newAccount);
+    this.accounts.push(newAccount);
   }
 }
