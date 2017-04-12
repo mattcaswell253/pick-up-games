@@ -4,24 +4,20 @@
   [longitude]="lng"
   [zoom]="zoom"
   [disableDefaultUI]="false"
-  [zoomControl]="false"
-  (mapClick)="mapClicked($event)">
+  [zoomControl]="false">
 
   <sebm-google-map-marker
   *ngFor="let m of markers; let i = index"
-  (markerClick)="clickedMarker(m.label, i)"
+  (markerClick)="clickedMarker(m, i)"
   [latitude]="m.lat"
   [longitude]="m.lng"
-  [label]="m.label"
-  [markerDraggable]="m.draggable"
-  (dragEnd)="markerDragEnd(m, $event)">
+  [markerDraggable]="m.draggable">
 
   <sebm-google-map-info-window>
-    <strong>InfoWindow content</strong>
+    <strong >{{m.label}}</strong>
   </sebm-google-map-info-window>
 
   </sebm-google-map-marker>
 
   </sebm-google-map>
 </div>
-<button class= "btn btn-success" (click)="performSearch()">Search</button>

@@ -1,3 +1,5 @@
+<app-add-game></app-add-game>
+
 <div *ngFor="let game of games | async" class="panel panel-default">
   <div class="panel-heading game-heading">
     <span (click)="goToDetailPage(game)">{{game.sport}}</span> |
