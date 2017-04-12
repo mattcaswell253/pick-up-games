@@ -14,6 +14,7 @@ import { AccountComponent } from './account/account.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddGameComponent } from './add-game/add-game.component';
+import { EditPlayersComponent } from './edit-players/edit-players.component';
 import { MapComponent } from './map/map.component';
 import { CourtDetailsComponent } from './court-details/court-details.component';
 import { TwitterComponent } from './twitter/twitter.component';
@@ -36,12 +37,10 @@ export const firebaseConfig = {
     GameDetailComponent,
     ProfileComponent,
     AddGameComponent,
+    EditPlayersComponent,
     MapComponent,
-<<<<<<< HEAD
-    CourtDetailsComponent
-=======
+    CourtDetailsComponent,
     TwitterComponent
->>>>>>> 6cdf6118683b553c110eb01acd2be899587a9967
   ],
   imports: [
     BrowserModule,

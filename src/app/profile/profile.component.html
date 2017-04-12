@@ -8,3 +8,12 @@
     {{game.time}}
   </div>
 </div>
+
+<h1>Users</h1>
+<div *ngFor="let account of accounts | async" class="panel panel-default">
+  <div class="panel-body">
+    {{account.name}}
+    {{account.username}}
+    {{account.email}}
+  </div>
+</div>

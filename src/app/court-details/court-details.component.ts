@@ -22,17 +22,17 @@ export class CourtDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private location: Location, private gameService: GameService, private router: Router, private courtService: CourtService) { }
 
   ngOnInit() {
-    this.games = this.gameService.getGames();
-    this.route.params.forEach((urlParameters) => {
-      this.courtId = urlParameters['id'];
-        }); //finds and assigns id to gameId
-    this.courts = this.courtService.getCourtById(this.courtId).subscribe(dataLastEmittedFromObserver => {
-    this.courtToDisplay = new Court
-    (dataLastEmittedFromObserver.lat,
-    dataLastEmittedFromObserver.lng,
-    dataLastEmittedFromObserver.address,
-    dataLastEmittedFromObserver.name)
-    })
+    // this.games = this.gameService.getGames();
+    // this.route.params.forEach((urlParameters) => {
+    //   this.courtId = urlParameters['id'];
+    //     }); //finds and assigns id to gameId
+    // this.courts = this.courtService.getCourtById(this.courtId).subscribe(dataLastEmittedFromObserver => {
+    // this.courtToDisplay = new Court
+    // (dataLastEmittedFromObserver.lat,
+    // dataLastEmittedFromObserver.lng,
+    // dataLastEmittedFromObserver.address,
+    // dataLastEmittedFromObserver.name)
+    // })
   }
 
 }

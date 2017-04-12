@@ -11,12 +11,12 @@ import { AccountService } from '../account.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
   providers: [GameService, AccountService]
+
 })
 
 export class ProfileComponent implements OnInit {
   games:FirebaseListObservable<any[]>;
   accounts:FirebaseListObservable<any[]>;
-
   currentRoute: string = this.router.url;
 
   constructor(private router: Router, private gameService: GameService, private accountService: AccountService) { }

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Game } from '../game.model';
 import { GameService } from '../game.service';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-game-detail',
@@ -12,23 +12,30 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
   providers: [GameService]
 })
 export class GameDetailComponent implements OnInit {
+  games:FirebaseListObservable<any[]>;
   gameId: string;
   gameToDisplay: Game;
+
 
   constructor(private route: ActivatedRoute, private location: Location, private gameService: GameService, private router: Router) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-          this.gameId = urlParameters['id'];
-        }); //finds and assigns id to gameId
+      this.gameId = urlParameters['id'];
+        });
          this.gameService.getGameById(this.gameId).subscribe(dataLastEmittedFromObserver => {
          this.gameToDisplay = new Game
-         (dataLastEmittedFromObserver.sport,
-         dataLastEmittedFromObserver.players,
-         dataLastEmittedFromObserver.location,
+         (dataLastEmittedFromObserver.names,
+         dataLastEmittedFromObserver.numberPlayers,
          dataLastEmittedFromObserver.date,
-         dataLastEmittedFromObserver.time)
+         dataLastEmittedFromObserver.time,
+         dataLastEmittedFromObserver.location)
        })
+
+       this.games = this.gameService.getGames();
   }
 
+  beginUpdatingGame(gameToUpdate, addedPlayer){
+   this.gameService.updateGame(gameToUpdate, addedPlayer);
+ }
 }
