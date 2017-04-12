@@ -25,3 +25,11 @@
   font-size: 15px;
   width: 30%;
 }
+
+.profile-img {
+  border-radius: 50%;
+}
+
+.profile-details {
+  float: right;
+}

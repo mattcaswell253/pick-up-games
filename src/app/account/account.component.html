@@ -15,10 +15,12 @@
 </form>
 
 <h1>Accounts</h1>
-<div *ngFor="let account of account | async" class="panel panel-default">
+<div *ngFor="let account of accounts | async" class="panel panel-default">
   <div class="panel-body">
-    {{account.username}}
-    {{account.email}}
-    <img src="{{account.photo}}"/>
+    <img class="profile-img" src="{{account.photo}}"/>
+    <span class=profile-details>
+      <h2>Username: {{account.username}}</h2>
+      <h3>Email: {{account.email}}</h3>
+    </span>
   </div>
 </div>
