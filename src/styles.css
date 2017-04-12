@@ -8,3 +8,20 @@
 .game-info {
   text-align: center;
 }
+
+.hash-search {
+  text-align: center;
+}
+
+.add-game {
+  width: 60%;
+  font-size: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#add-button {
+  font-size: 15px;
+  width: 30%;
+}

@@ -16,6 +16,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { MapComponent } from './map/map.component';
 import { CourtDetailsComponent } from './court-details/court-details.component';
+import { TwitterComponent } from './twitter/twitter.component';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -35,7 +37,11 @@ export const firebaseConfig = {
     ProfileComponent,
     AddGameComponent,
     MapComponent,
+<<<<<<< HEAD
     CourtDetailsComponent
+=======
+    TwitterComponent
+>>>>>>> 6cdf6118683b553c110eb01acd2be899587a9967
   ],
   imports: [
     BrowserModule,
@@ -52,5 +58,5 @@ export const firebaseConfig = {
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
-  
+
 }
