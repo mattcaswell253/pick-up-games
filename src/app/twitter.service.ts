@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers} from '@angular/http';
+import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class TwitterService {
-
-  constructor(private http: Http) { }
 
 }

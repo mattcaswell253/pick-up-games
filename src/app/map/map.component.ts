@@ -24,15 +24,13 @@ export class MapComponent implements OnInit {
   lat: number = 47.601407;
   lng: number = -122.307257;
 
-  markers: marker[] = []
+  markers: marker[] = [];
   court:FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
   performSearch(): void {
     var apiLink = this.link;
-    let currentMarkers:marker[];
-
-  this.http.request(apiLink)
+    this.http.request(apiLink)
     .subscribe((res: Response) => {
       this.courts = res.json();
       for(var i = 0; i < this.courts.length; i++) {
@@ -53,12 +51,12 @@ export class MapComponent implements OnInit {
         }
       }
     });
-    console.log(this.markers);
+    // console.log(this.markers);
   }
   ngOnInit() {
     this.performSearch();
   }
-  clickedMarker(marker: marker, index: number) {
+  clickedMarker(marker: marker, index: string) {
     this.router.navigate(['courts', index]);
     console.log('Clicked Marker: ' + marker.name + ' at index '+ index);
   }
