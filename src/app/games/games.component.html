@@ -1,4 +1,6 @@
-
+<div class="jumbotron">
+  <h1>Active Games</h1>
+</div>
 <div *ngFor="let game of games | async" (click)="goToDetailPage(game)" class="panel panel-default">
   <div class="panel-heading game-heading">
     <span></span>{{game.location}}
