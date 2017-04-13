@@ -1,7 +1,6 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
-
 import { AccountComponent } from './account/account.component';
 import { GamesComponent } from './games/games.component';
 import { MapComponent } from './map/map.component';
@@ -25,7 +24,6 @@ const appRoutes: Routes = [
     path: 'games/:id',
     component: GameDetailComponent
   },
-
   {
     path: 'courts/:id',
     component: CourtDetailsComponent

@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a routerLink="account">My Account</a></li>
         <li><a routerLink="games">Games</a></li>
-        <li><a routerLink="profile">Profile</a></li>
+        
       </ul>
     </div>
   </div>
@@ -35,24 +35,29 @@
 </header>
 
 
-<!-- <button class="btn btn-warning">Create Account</button> -->
-<form class="new-acct-form">
-  <div>
-    <input #newName placeholder="Name">
-    <input #newUserName placeholder="Username">
-    <input #userEmail type="email" placeholder="Email">
-    <input #userPassword type="password" placeholder="Password">
-    <input #userPicture placeholder="Photo">
+<button class="btn btn-warning create" (click)="showdiv(showform)">Create Account</button>
+
+<div class="panel panel-default new-acct">
+  <div *ngIf="showform === 'yes'">
+    <form ng-show="hideElement" class="new-acct-form">
+      <input #newName placeholder="Name" required>
+      <input #newUserName placeholder="Username" required>
+      <input type="email" #userEmail  placeholder="Email" required>
+      <input #userPassword type="password" placeholder="Password" required>
+      <input #userPicture placeholder="Photo">
+      <br>
+      <button class="btn btn-success new-acct" (click)="submitForm(newName.value, newUserName.value, userEmail.value, userPassword.value, userPicture.value); newName.value=''; newUserName.value=''; userEmail.value=''; userPassword.value=''; userPicture.value=''">Submit</button>
+    </form>
   </div>
-  <button class="btn btn-success new-acct" (click)="submitForm(newName.value, newUserName.value, userEmail.value, userPassword.value, userPicture.value); newName.value=''; newUserName.value=''; userEmail.value=''; userPassword.value=''; userPicture.value=''">Submit</button>
-</form>
+</div>
 
 <h1>Accounts</h1>
-<div *ngFor="let account of accounts | async" class="panel panel-default">
+<div *ngFor="let account of accounts | async" class="panel panel-default all-accounts">
   <div class="panel-body">
     <img class="profile-img" src="{{account.photo}}"/>
     <span class=profile-details>
       <h2>Username: {{account.username}}</h2>
+      <h3>Name: {{account.name}}</h3>
       <h3>Email: {{account.email}}</h3>
     </span>
   </div>
