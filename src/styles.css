@@ -28,8 +28,29 @@
 
 .profile-img {
   border-radius: 50%;
+  margin-left: 5%;
+  width: 300px;
 }
 
 .profile-details {
+  text-decoration: underline;
   float: right;
+  margin-right: 5%;
+  color: orange;
+}
+
+.new-acct {
+  text-align: center;
+}
+
+.all-accounts {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form input{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 20px;
 }

@@ -22,7 +22,7 @@ export class GameService {
 
  updateGame(localUpdatedGame, nameAdded){
     var gameEntryInFirebase = this.getGameById(localUpdatedGame.$key);
-    gameEntryInFirebase.update({names: localUpdatedGame.names+", "+nameAdded});
+    gameEntryInFirebase.update({names: localUpdatedGame.names+", "+nameAdded, numberPlayers: localUpdatedGame.numberPlayers -= 1});
 }
 
  addGame(newGame: Game){

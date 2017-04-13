@@ -1,3 +1,17 @@
+<header class="intro-header" style="background-image: url('http://www.gsblaw.com/assets/htmlimages/blogs/9/2015/04/I-Stock-Basketball-Court.jpg')">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>Game Detail</h1>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 <div class="panel panel-default">
   <div *ngFor="let court of courts | async">
     <div *ngIf="courtId === court.name" class="panel-heading game-heading">
@@ -9,21 +23,19 @@
   <hr>
 <div class="panel panel-default">
   <div class="panel-body">
-    <div *ngFor="let court of courts | async">
       <div *ngFor="let game of games | async">
-        <div *ngIf="game.location === court.name">
+        <div *ngIf="game.location === courtId">
           <div class="col-md-4 game-info">
-            <span class="game-details">Number of players needed:</span> {{game?.players}}
+            <span class="game-details">Number of players needed:</span> {{game.numberPlayers}}
           </div>
           <div class="col-md-4 game-info">
-            <span class="game-details">Date:</span> {{game?.date}}
+            <span class="game-details">Date:</span> {{game.date}}
           </div>
           <div class="col-md-4 game-info">
-            <span class="game-details">Time:</span> {{game?.time}}
+            <span class="game-details">Time:</span> {{game.time}}
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
 

@@ -1,17 +1,35 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="">Pick Up Game</a>
+<html lang="en">
+
+<body>
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header page-scroll">
+        <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          Menu <i class="fa fa-bars"></i>
+        </button> -->
+        <a class="navbar-brand" routerLink="">Pick Up Game</a>
+      </div>
+
+
+      <div class="" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink="account">My Account</a></li>
+          <li><a routerLink="games">Games</a></li>
+
+        </ul>
+      </div>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a routerLink="account">Account</a></li>
-      <li><a routerLink="games">Games</a></li>
-    </ul>
-  </div>
-</nav>
+  </nav>
 
-<h1>{{title}}</h1>
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+    <div class="container">
+      <router-outlet></router-outlet>
+
+    </div>
+
+
+
+
+  </body>
+</html>

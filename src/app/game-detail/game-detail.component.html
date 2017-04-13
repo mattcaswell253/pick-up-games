@@ -1,3 +1,17 @@
+<header class="intro-header" style="background-image: url('http://www.gsblaw.com/assets/htmlimages/blogs/9/2015/04/I-Stock-Basketball-Court.jpg')">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>Game Detail</h1>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 <div class="panel panel-default">
     <div class="panel-heading game-heading">
       <span></span>{{gameToDisplay?.location}}
@@ -6,10 +20,13 @@
       <span class="game-details">Date: </span>{{gameToDisplay?.date}}<br><br>
       <span class="game-details">Time: </span>{{gameToDisplay?.time}}<br><br>
       <span class="game-details">Names: </span>{{gameToDisplay?.names}}<br><br>
-      <span class="game-details">Number of Players: </span>{{gameToDisplay?.numberPlayers}}<br><br>
-  </div>
+      <span class="game-details">Number of players needed: </span>{{gameToDisplay?.numberPlayers}}<br><br>
+    </div>
 
-<div *ngFor="let game of games | async"  class="panel panel-default">
-  <app-edit-players [selectedGame]="game"></app-edit-players>
-</div>
-</div>
+    <div *ngFor="let game of games | async"  class="panel panel-default">
+      <div *ngIf="gameId === game.$key">
+        <div *ngIf="game.numberPlayers > 0">
+          <app-edit-players [selectedGame]="game"></app-edit-players>
+        </div>
+      </div>
+    </div>
