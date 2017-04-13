@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Game } from '../game.model';
@@ -14,6 +14,7 @@ import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'a
   providers: [GameService, CourtService]
 })
 export class CourtDetailsComponent implements OnInit {
+  @Input() marker;
   games:FirebaseListObservable<any[]>;
   courts:FirebaseListObservable<any[]>;
   courtToDisplay: Court;
