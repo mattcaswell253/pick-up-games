@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header page-scroll">
@@ -13,7 +14,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a routerLink="account">My Account</a></li>
         <li><a routerLink="games">Games</a></li>
-        <li><a routerLink="profile">Profile</a></li>
+      
       </ul>
     </div>
   </div>
@@ -25,13 +26,14 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="site-heading">
-          <h1>My Account</h1>
+          <h1>Active Games<</h1>
 
         </div>
       </div>
     </div>
   </div>
 </header>
+
 
 <div *ngFor="let game of games | async" (click)="goToDetailPage(game)" class="panel panel-default">
   <div class="panel-heading game-heading">

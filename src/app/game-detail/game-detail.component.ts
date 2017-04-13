@@ -3,7 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Game } from '../game.model';
 import { GameService } from '../game.service';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-game-detail',
@@ -13,9 +13,10 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class GameDetailComponent implements OnInit {
   games:FirebaseListObservable<any[]>;
+
   gameId: string;
   gameToDisplay: Game;
-
+  currentRoute: string = this.router.url;
 
   constructor(private route: ActivatedRoute, private location: Location, private gameService: GameService, private router: Router) { }
 
@@ -31,7 +32,6 @@ export class GameDetailComponent implements OnInit {
          dataLastEmittedFromObserver.time,
          dataLastEmittedFromObserver.location)
        })
-
        this.games = this.gameService.getGames();
   }
 

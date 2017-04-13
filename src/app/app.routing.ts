@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 import { AccountComponent } from './account/account.component';
 import { GamesComponent } from './games/games.component';
+import { MapComponent } from './map/map.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { CourtDetailsComponent } from './court-details/court-details.component';
 
