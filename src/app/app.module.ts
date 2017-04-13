@@ -12,7 +12,6 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AccountComponent } from './account/account.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
-import { ProfileComponent } from './profile/profile.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { EditPlayersComponent } from './edit-players/edit-players.component';
 import { MapComponent } from './map/map.component';
@@ -35,7 +34,6 @@ export const firebaseConfig = {
     AccountComponent,
     GamesComponent,
     GameDetailComponent,
-    ProfileComponent,
     AddGameComponent,
     EditPlayersComponent,
     MapComponent,

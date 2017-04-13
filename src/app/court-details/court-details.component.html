@@ -1,23 +1,49 @@
 <div class="panel panel-default">
   <div *ngFor="let court of courts | async">
-    <div *ngIf="courtId === court.name" class="panel-heading">
-      {{court.name}}
+    <div *ngIf="courtId === court.name" class="panel-heading game-heading">
+      {{court.name}}<br><br>
+      {{court.address}}
     </div>
-    <div *ngFor="let game of games | async">
-      <div *ngIf="game.location === court.name" class="panel panel-default">
-        <div class="panel-body">
+  </div>
+</div>
+  <hr>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div *ngFor="let court of courts | async">
+      <div *ngFor="let game of games | async">
+        <div *ngIf="game.location === court.name">
           <div class="col-md-4 game-info">
-            <span class="game-details">Number of players needed:</span> {{game.players}}
+            <span class="game-details">Number of players needed:</span> {{game?.players}}
           </div>
           <div class="col-md-4 game-info">
-            <span class="game-details">Date:</span> {{game.date}}
+            <span class="game-details">Date:</span> {{game?.date}}
           </div>
           <div class="col-md-4 game-info">
-            <span class="game-details">Time:</span> {{game.time}}
+            <span class="game-details">Time:</span> {{game?.time}}
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
+
+<div *ngFor="let court of courts | async">
+    <div *ngIf="courtId === court.name">
+      <div class="">
+        <input #newNames type="text" placeholder="Names">
+      </div>
+      <div class="">
+        <input #newNumberPlayers type="number" placeholder="Number of Players">
+      </div>
+      <div class="">
+        <input #newLocation type="hidden" [(ngModel)]="court.name" type="text" placeholder="Location">
+      </div>
+      <div class="">
+        <input #newDate type="text" placeholder="Date">
+      </div>
+      <div class="">
+        <input #newTime type="text" placeholder="Time">
+      </div>
+      <button class="btn btn-warning" (click)="submitForm(newNames.value, newNumberPlayers.value, newDate.value, newTime.value, newLocation.value); newNames.value=''; newNumberPlayers.value=''; newDate.value=''; newTime.value='';" routerLink="/">Add</button>
+    </div>
 </div>

@@ -33,4 +33,8 @@ export class CourtDetailsComponent implements OnInit {
         });
         // this.courtToDisplay = this.courtService.getCourtById(this.courtId);
   }
+  submitForm(names: string, numberPlayers: number, date: string, time: string, location: string) {
+    var newGame: Game = new Game(names, numberPlayers, date, time, location);
+    this.gameService.addGame(newGame);
+  }
 }

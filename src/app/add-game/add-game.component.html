@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <h2 class="panel-title">Start a new pick up game!</h2>
   </div>
-  <div class="panel-body add-game-info">
+  <div class="add-game-info">
       <div class="">
         <input #newNames type="text" placeholder="Names">
       </div>
@@ -18,6 +18,6 @@
       <div class="">
         <input #newTime type="text" placeholder="Time">
       </div>
-      <button id="add-button" class="btn btn-warning" (click)="submitForm(newNames.value, newNumberPlayers.value, newDate.value, newTime.value, newLocation.value); newNames.value=''; newNumberPlayers.value=''; newDate.value=''; newTime.value=''; newLocation.value='';" routerLink="/">Add</button>
+      <button class="btn btn-warning" (click)="submitForm(newNames.value, newNumberPlayers.value, newDate.value, newTime.value, newLocation.value); newNames.value=''; newNumberPlayers.value=''; newDate.value=''; newTime.value=''; newLocation.value='';" routerLink="/">Add</button>
   </div>
 </div>
